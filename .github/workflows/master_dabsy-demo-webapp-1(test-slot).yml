@@ -38,7 +38,7 @@ jobs:
     runs-on: windows-latest
     needs: build
     environment:
-      name: 'Production'
+      name: 'test-slot'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -52,6 +52,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'dabsy-demo-webapp-1'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6E3F69C86D224D3A9FBB3A920688411D }}
+          slot-name: 'test-slot'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AA6C26B6FC2648EC80450621EC8DBA28 }}
           package: .
